@@ -476,7 +476,6 @@ class _MaterialControlsState extends State<MaterialControls>
   }
 
   void _cancelAndRestartTimer() {
-    print('_cancelAndRestartTimer');
     _hideTimer?.cancel();
     _startHideTimer();
     setState(() {
