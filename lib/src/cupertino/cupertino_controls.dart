@@ -1,4 +1,6 @@
 import 'dart:async';
+
+import 'dart:io';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
@@ -86,7 +88,12 @@ class _CupertinoControlsState extends State<CupertinoControls>
     final buttonPadding = orientation == Orientation.portrait ? 16.0 : 24.0;
 
     return MouseRegion(
-      onHover: (_) => _cancelAndRestartTimer(),
+      onHover: (_) {
+        if (Platform.isAndroid || Platform.isIOS || Platform.isFuchsia) {
+        } else {
+          _cancelAndRestartTimer();
+        }
+      },
       child: GestureDetector(
         onTap: () => _cancelAndRestartTimer(),
         child: AbsorbPointer(

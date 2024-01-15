@@ -1,4 +1,7 @@
-### 1.7.4+2
+## 1.7.4+3
+* Fixed: flutter_cached_video_player_plus: ^2.0.8 and `1.7.4+2` not working.
+
+## 1.7.4+2
 * Fixed: init() has not been implemented.
 ## 1.7.4+1
 * Fixed: Example

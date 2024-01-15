@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:cached_chewie_plus/src/material/widgets/options_dialog.dart';
 import 'package:cached_chewie_plus/src/material/widgets/playback_speed_dialog.dart';
@@ -73,7 +74,10 @@ class _MaterialControlsState extends State<MaterialControls>
 
     return MouseRegion(
       onHover: (_) {
-        _cancelAndRestartTimer();
+        if (Platform.isIOS || Platform.isAndroid || Platform.isFuchsia) {
+        } else {
+          _cancelAndRestartTimer();
+        }
       },
       child: GestureDetector(
         onTap: () => _cancelAndRestartTimer(),
@@ -472,9 +476,9 @@ class _MaterialControlsState extends State<MaterialControls>
   }
 
   void _cancelAndRestartTimer() {
+    print('_cancelAndRestartTimer');
     _hideTimer?.cancel();
     _startHideTimer();
-
     setState(() {
       notifier.hideStuff = false;
       _displayTapped = true;
