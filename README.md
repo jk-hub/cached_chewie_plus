@@ -8,7 +8,7 @@ In your `pubspec.yaml` file within your Flutter Project add `cached_chewie_plus`
 
 ```yaml
 dependencies:
-  chewie: <latest_version>
+  cached_chewie_plus: <latest_version>
 ```
 
 ## Using it
