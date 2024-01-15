@@ -1,3 +1,7 @@
+
+## 1.7.4+1
+* Fixed: Example
+
 ## 1.7.4
 * 🛠️ [#774](https://github.com/fluttercommunity/chewie/pull/774): Fixed : Playback speed reset on forwarding video. Thanks [Kronos-2701](https://github.com/Kronos-2701).
 
