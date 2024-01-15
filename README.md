@@ -32,7 +32,7 @@ dependencies:
 ## Using it
 
 ```dart
-import 'package:chewie/chewie.dart';
+import 'package:chewie/cached_chewie_plus.dart';
 final videoPlayerController = VideoPlayerController.network(
     'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
 

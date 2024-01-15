@@ -1,5 +1,6 @@
-import 'package:chewie/src/models/option_item.dart';
 import 'package:flutter/material.dart';
+
+import '../../../cached_chewie_plus.dart';
 
 class OptionsDialog extends StatefulWidget {
   const OptionsDialog({

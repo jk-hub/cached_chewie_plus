@@ -1,10 +1,9 @@
 import 'dart:io';
 
-import 'package:chewie/chewie.dart';
+import 'package:cached_chewie_plus/cached_chewie_plus.dart';
 import 'package:chewie_example/app/theme.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
-import 'package:video_player/video_player.dart';
 
 class ChewieDemo extends StatefulWidget {
   const ChewieDemo({
@@ -22,8 +21,8 @@ class ChewieDemo extends StatefulWidget {
 
 class _ChewieDemoState extends State<ChewieDemo> {
   TargetPlatform? _platform;
-  late VideoPlayerController _videoPlayerController1;
-  late VideoPlayerController _videoPlayerController2;
+  late CachedVideoPlayerController _videoPlayerController1;
+  late CachedVideoPlayerController _videoPlayerController2;
   ChewieController? _chewieController;
   int? bufferDelay;
 
@@ -49,9 +48,9 @@ class _ChewieDemoState extends State<ChewieDemo> {
 
   Future<void> initializePlayer() async {
     _videoPlayerController1 =
-        VideoPlayerController.networkUrl(Uri.parse(srcs[currPlayIndex]));
+        CachedVideoPlayerController.network((srcs[currPlayIndex]));
     _videoPlayerController2 =
-        VideoPlayerController.networkUrl(Uri.parse(srcs[currPlayIndex]));
+        CachedVideoPlayerController.network((srcs[currPlayIndex]));
     await Future.wait([
       _videoPlayerController1.initialize(),
       _videoPlayerController2.initialize()

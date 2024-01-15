@@ -2,20 +2,20 @@ import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
-import 'package:chewie/src/animated_play_pause.dart';
-import 'package:chewie/src/center_play_button.dart';
-import 'package:chewie/src/chewie_player.dart';
-import 'package:chewie/src/chewie_progress_colors.dart';
-import 'package:chewie/src/cupertino/cupertino_progress_bar.dart';
-import 'package:chewie/src/cupertino/widgets/cupertino_options_dialog.dart';
-import 'package:chewie/src/helpers/utils.dart';
-import 'package:chewie/src/models/option_item.dart';
-import 'package:chewie/src/models/subtitle_model.dart';
-import 'package:chewie/src/notifiers/index.dart';
+import 'package:cached_chewie_plus/src/animated_play_pause.dart';
+import 'package:cached_chewie_plus/src/center_play_button.dart';
+import 'package:cached_chewie_plus/src/chewie_player.dart';
+import 'package:cached_chewie_plus/src/chewie_progress_colors.dart';
+import 'package:cached_chewie_plus/src/cupertino/cupertino_progress_bar.dart';
+import 'package:cached_chewie_plus/src/cupertino/widgets/cupertino_options_dialog.dart';
+import 'package:cached_chewie_plus/src/helpers/utils.dart';
+import 'package:cached_chewie_plus/src/models/option_item.dart';
+import 'package:cached_chewie_plus/src/models/subtitle_model.dart';
+import 'package:cached_chewie_plus/src/notifiers/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cached_video_player_plus/flutter_cached_video_player_plus.dart';
 import 'package:provider/provider.dart';
-import 'package:video_player/video_player.dart';
 
 class CupertinoControls extends StatefulWidget {
   const CupertinoControls({
@@ -38,7 +38,7 @@ class CupertinoControls extends StatefulWidget {
 class _CupertinoControlsState extends State<CupertinoControls>
     with SingleTickerProviderStateMixin {
   late PlayerNotifier notifier;
-  late VideoPlayerValue _latestValue;
+  late CachedVideoPlayerValue _latestValue;
   double? _latestVolume;
   Timer? _hideTimer;
   final marginSize = 5.0;
@@ -50,7 +50,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
   Timer? _bufferingDisplayTimer;
   bool _displayBufferingIndicator = false;
   double selectedSpeed = 1.0;
-  late VideoPlayerController controller;
+  late CachedVideoPlayerController controller;
 
   // We know that _chewieController is set in didChangeDependencies
   ChewieController get chewieController => _chewieController!;
@@ -372,7 +372,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
   }
 
   GestureDetector _buildMuteButton(
-    VideoPlayerController controller,
+    CachedVideoPlayerController controller,
     Color backgroundColor,
     Color iconColor,
     double barHeight,
@@ -418,7 +418,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
   }
 
   GestureDetector _buildPlayPause(
-    VideoPlayerController controller,
+    CachedVideoPlayerController controller,
     Color iconColor,
     double barHeight,
   ) {
@@ -539,7 +539,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
   }
 
   GestureDetector _buildSpeedButton(
-    VideoPlayerController controller,
+    CachedVideoPlayerController controller,
     Color iconColor,
     double barHeight,
   ) {
