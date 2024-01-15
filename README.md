@@ -1,40 +1,27 @@
-# chewie
+# cached_chewie_plus
 
-[![Flutter Community: chewie](https://fluttercommunity.dev/_github/header/chewie)](https://github.com/fluttercommunity/community)
-
-[![Version](https://img.shields.io/pub/v/chewie.svg)](https://pub.dev/packages/chewie)
-![CI](https://github.com/brianegan/chewie/workflows/CI/badge.svg)
-[![Generic badge](https://img.shields.io/badge/platform-android%20|%20ios%20|%20web%20-blue.svg)](https://pub.dev/packages/chewie)
-
-The video player for Flutter with a heart of gold. 
-
-The [`video_player`](https://pub.dartlang.org/packages/video_player) plugin provides low-level access to video playback. Chewie uses the `video_player` under the hood and wraps it in a friendly Material or Cupertino UI!
-
-## Preview
-
-| MaterialControls | MaterialDesktopControls |
-| :--------------: | :---------------------: |
-|     ![](https://github.com/brianegan/chewie/raw/master/assets/MaterialControls.png)     |    ![](https://github.com/brianegan/chewie/raw/master/assets/MaterialDesktopControls.png)     |
-
-### CupertinoControls
-![](https://github.com/brianegan/chewie/raw/master/assets/CupertinoControls.png)
+## This if a fork of official chewie bundled with flutter_cached_video_player_plus
 
 ## Installation
 
-In your `pubspec.yaml` file within your Flutter Project add `chewie` and `video_player` under dependencies:
+In your `pubspec.yaml` file within your Flutter Project add `cached_chewie_plus` under dependencies:
 
 ```yaml
 dependencies:
   chewie: <latest_version>
-  video_player: <latest_version>
 ```
 
 ## Using it
 
 ```dart
-import 'package:chewie/cached_chewie_plus.dart';
-final videoPlayerController = VideoPlayerController.network(
-    'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
+
+extension UriString on String {
+  Uri get toUri => Uri.parse(this);
+}
+
+import 'package:cached_chewie_plus/cached_chewie_plus.dart';
+final videoPlayerController = CachedVideoPlayerController.networkUrl(
+    'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'.toUri);
 
 await videoPlayerController.initialize();
 
