@@ -1,4 +1,5 @@
-
+### 1.7.4+2
+* Fixed: init() has not been implemented.
 ## 1.7.4+1
 * Fixed: Example
 
