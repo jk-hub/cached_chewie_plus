@@ -1,6 +1,6 @@
 name: cached_chewie_plus
 description: Fork of official chewie [http://github.com/fluttercommunity/chewie] with flutter_cached_video_player_plus.
-version: 1.7.4+4
+version: 1.7.4+5
 homepage: https://github.com/woodjobber/cached_chewie_plus.git
 
 environment:
@@ -16,7 +16,7 @@ dependencies:
   flutter_cached_video_player_plus: ^2.1.1+1
 #    path: ../../fixLibs/flutter_cached_video_player
 
-  wakelock_plus: ^1.1.0
+  wakelock: ^0.6.2
 
 dev_dependencies:
   flutter_test:

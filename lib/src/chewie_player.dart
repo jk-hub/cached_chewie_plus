@@ -4,7 +4,7 @@ import 'package:cached_chewie_plus/src/player_with_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:wakelock_plus/wakelock_plus.dart';
+import 'package:wakelock/wakelock.dart';
 
 import '../cached_chewie_plus.dart';
 import 'notifiers/index.dart';
@@ -156,7 +156,7 @@ class ChewieState extends State<Chewie> {
     onEnterFullScreen();
 
     if (!widget.controller.allowedScreenSleep) {
-      WakelockPlus.enable();
+      Wakelock.enable();
     }
 
     await Navigator.of(
@@ -167,7 +167,7 @@ class ChewieState extends State<Chewie> {
     widget.controller.exitFullScreen();
 
     if (!widget.controller.allowedScreenSleep) {
-      WakelockPlus.disable();
+      Wakelock.disable();
     }
 
     SystemChrome.setEnabledSystemUIMode(
