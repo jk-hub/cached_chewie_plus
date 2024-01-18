@@ -1,7 +1,7 @@
-
+## 1.7.4+6
+* Upgrade
 ## 1.7.4+5
 * wake_lock_plus => wake_lock
-
 ## 1.7.4+4
 * Upgrade
 ## 1.7.4+3
